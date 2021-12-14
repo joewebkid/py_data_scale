@@ -9,10 +9,10 @@ payload = json.dumps({
     "collection": "TestCollection",
     "database": "Cluster0",
     "dataSource": "Cluster0",
-    "document": {
-      "status": "close",
-      "text": "test"
-    }
+    # "document": {
+    #   "status": "close",
+    #   "text": "test"
+    # }
 })
 headers = {
     'Content-Type': 'application/json',
