@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <nav class="" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Data Scale Sci</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Cat</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="#">Cat</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <ul class="collection">
+            {% for d in data %}
+            <li class="collection-item avatar">
+                <div class="circle">{{ d.title[0] }}</div>
+                <span class="title">{{ d.title }}</span>
+                <p>Описание <br>
+                    Summary
+                </p>
+
+                <div class="secondary-content">{{ d.pubDate }}</div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
