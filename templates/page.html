@@ -24,31 +24,15 @@
     </nav>
 
     <div class="container">
-        <ul class="collection">
-            {% for d in data %}
-            <li class="collection-item avatar">
-                {% if not d["content:encoded"] %}
-                <a href="{{d.guid['#text']}}">
-                    <div class="circle">{{ d.title[0] }}</div>
-                    <span class="title">{{ d.title }}</span>
-                    <p>Без контента</p>
-
-                    <div class="secondary-content">{{ d.pubDate }}</div>
-                </a>
-                {% else %}
-                <a href="/p/{{d._id}}">
-                    <div class="circle">{{ d.title[0] }}</div>
-                    <span class="title">{{ d.title }}</span>
-                    <p>Описание <br>
-                        Summary
-                    </p>
-
-                    <div class="secondary-content">{{ d.pubDate }}</div>
-                </a>
-                {% endif %}
-            </li>
+        <h1>{{data["title"]}}</h1>
+        <div>
+            {% for cat in data["category"] %}
+            <span class="new badge red">{{cat}}</span>
             {% endfor %}
-        </ul>
+        </div>
+
+        {{data["content:encoded"] | safe}}
+    </div>
     </div>
 </body>
 </html>

@@ -4,13 +4,14 @@ import json
 
 class apiMongoConnect:
     ''' Description '''
-    def req(method_name="find",method_type="POST",add_data=False):
+    def req(method_name="find",method_type="POST",add_data={}):
         ''' Description '''
         url = "https://data.mongodb-api.com/app/data-byttc/endpoint/data/beta/action/find"
         payload = json.dumps({
             "collection": "TestCollection",
             "database": "Cluster0",
             "dataSource": "Cluster0",
+            **add_data
             # "document": {
             #   "status": "close",
             #   "text": "test"
