@@ -22,3 +22,5 @@ def show_post(post_id):
     dt_json = dt.json()
     content = dt_json['documents'][0]
     return render_template('page.html', data=content)
+
+app.run(debug=True)
